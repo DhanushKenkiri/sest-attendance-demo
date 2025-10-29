@@ -1,5 +1,5 @@
 {
-  "name": "Gemini Smart Attendance System",
+  "name": "Sest-attendance",
   "description": "An AI-powered attendance system using Gemini Vision to recognize students from images, cross-reference with a timetable, and log attendance records to a database.",
   "requestFramePermissions": [
     "camera"

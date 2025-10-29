@@ -132,7 +132,7 @@ const App: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 font-sans">
+    <div className="min-h-screen bg-black text-gray-100 font-sans">
       <Header />
        <div className="container mx-auto p-4 md:p-8">
         <div className="flex justify-end mb-6">
@@ -141,7 +141,7 @@ const App: React.FC = () => {
                     setError(null);
                     setView(prev => (prev === 'admin' ? 'kiosk' : 'admin'));
                 }} 
-                className="bg-slate-700 hover:bg-slate-600 text-cyan-300 font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm"
+                className="bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm"
             >
                 {view === 'admin' ? "Go to Live Kiosk" : "Go to Admin Dashboard"}
             </button>

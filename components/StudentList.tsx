@@ -8,20 +8,20 @@ interface StudentListProps {
 
 const StudentList: React.FC<StudentListProps> = ({ students, onDelete }) => {
     if (students.length === 0) {
-        return <p className="text-slate-400 text-center py-4">No students added yet.</p>;
+        return <p className="text-gray-400 text-center py-4">No students added yet.</p>;
     }
 
     return (
         <div className="space-y-2 max-h-80 overflow-y-auto pr-2">
             {students.map((student, index) => (
-                <div key={student.id} className={`flex items-center justify-between p-2 rounded-lg ${index % 2 === 0 ? 'bg-slate-700/50' : 'bg-slate-700/20'}`}>
+                <div key={student.id} className={`flex items-center justify-between p-2 rounded-lg ${index % 2 === 0 ? 'bg-gray-900/50' : 'bg-gray-900/20'}`}>
                     <div className="flex items-center gap-3">
                         <img 
                             src={`data:${student.images[0].mimeType};base64,${student.images[0].base64}`} 
                             alt={student.id} 
-                            className="w-10 h-10 object-cover rounded-full border-2 border-slate-600"
+                            className="w-10 h-10 object-cover rounded-full border-2 border-gray-700"
                         />
-                        <span className="font-mono text-sm text-slate-300">{student.id}</span>
+                        <span className="font-mono text-sm text-gray-300">{student.id}</span>
                     </div>
                     <button 
                         onClick={() => onDelete(student.id)}

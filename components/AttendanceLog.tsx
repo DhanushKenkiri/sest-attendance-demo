@@ -33,7 +33,7 @@ const AttendanceLog: React.FC = () => {
                 <button 
                     onClick={getLogs} 
                     disabled={isLoading}
-                    className="flex items-center justify-center text-sm bg-slate-700 hover:bg-slate-600 disabled:bg-slate-800 text-cyan-300 font-semibold py-2 px-4 rounded-lg transition duration-300"
+                    className="flex items-center justify-center text-sm bg-gray-700 hover:bg-gray-600 disabled:bg-gray-900 text-gray-300 font-semibold py-2 px-4 rounded-lg transition duration-300"
                 >
                     {isLoading ? <><Spinner /> Refreshing...</> : (
                         <><svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h5M20 20v-5h-5M20 4h-5v5M4 20h5v-5" /></svg>
@@ -46,11 +46,11 @@ const AttendanceLog: React.FC = () => {
                 {isLoading && logs.length === 0 ? (
                      <div className="flex items-center justify-center p-8"><Spinner /> <span className="ml-2">Loading Logs...</span></div>
                 ) : !isLoading && logs.length === 0 ? (
-                    <p className="text-slate-400 text-center py-8">No attendance records found.</p>
+                    <p className="text-gray-400 text-center py-8">No attendance records found.</p>
                 ) : (
                     <table className="w-full text-left text-sm">
-                        <thead className="sticky top-0 bg-slate-800 z-10">
-                            <tr className="border-b-2 border-slate-700">
+                        <thead className="sticky top-0 bg-black z-10">
+                            <tr className="border-b-2 border-gray-800">
                                 <th className="p-3">Student ID</th>
                                 <th className="p-3">Class</th>
                                 <th className="p-3">Timestamp</th>
@@ -59,7 +59,7 @@ const AttendanceLog: React.FC = () => {
                         </thead>
                         <tbody>
                             {logs.map((log, index) => (
-                                <tr key={log.timestamp + log.studentId} className={`border-b border-slate-700/50 ${index % 2 === 0 ? 'bg-slate-700/20' : ''}`}>
+                                <tr key={log.timestamp + log.studentId} className={`border-b border-gray-800/50 ${index % 2 === 0 ? 'bg-gray-900/20' : ''}`}>
                                     <td className="p-3 font-mono">{log.studentId}</td>
                                     <td className="p-3">{log.class}</td>
                                     <td className="p-3">{new Date(log.timestamp * 1000).toLocaleString()}</td>

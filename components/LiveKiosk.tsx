@@ -162,14 +162,14 @@ const LiveKiosk: React.FC<LiveKioskProps> = ({ handleRecognition, getCurrentClas
     return (
         <div className="max-w-4xl mx-auto space-y-8">
             <div className="text-center">
-                <h2 className="text-3xl font-bold text-cyan-300">Live Attendance Kiosk</h2>
-                <p className="text-slate-400">Start real-time detection to automatically mark attendance on motion.</p>
+                <h2 className="text-3xl font-bold text-gray-200">Live Attendance Kiosk</h2>
+                <p className="text-gray-400">Start real-time detection to automatically mark attendance on motion.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
                 <div className="lg:col-span-3">
                     <Card title="Live Camera Feed">
                         <div className="relative">
-                            <video ref={videoRef} autoPlay playsInline muted className="w-full rounded-md border-2 border-slate-700 bg-slate-800 aspect-video"></video>
+                            <video ref={videoRef} autoPlay playsInline muted className="w-full rounded-md border-2 border-gray-700 bg-gray-900 aspect-video"></video>
                             <canvas ref={canvasRef} className="hidden"></canvas>
                             <canvas ref={motionCanvasRef} className="hidden"></canvas>
                              {isDetecting && (
@@ -187,18 +187,18 @@ const LiveKiosk: React.FC<LiveKioskProps> = ({ handleRecognition, getCurrentClas
                                 </div>
                             )}
                         </div>
-                        <button onClick={() => setIsDetecting(prev => !prev)} className={`mt-4 w-full flex items-center justify-center font-bold py-3 px-4 rounded-md transition duration-300 ${isDetecting ? 'bg-red-600 hover:bg-red-700' : 'bg-cyan-600 hover:bg-cyan-700'} text-white`}>
+                        <button onClick={() => setIsDetecting(prev => !prev)} className={`mt-4 w-full flex items-center justify-center font-bold py-3 px-4 rounded-md transition duration-300 ${isDetecting ? 'bg-red-600 hover:bg-red-700' : 'bg-gray-700 hover:bg-gray-600'} text-white`}>
                                 {isDetecting ? 'Stop Real-time Detection' : 'Start Real-time Detection'}
                         </button>
-                        <div className="text-center mt-4 text-sm text-slate-400">
-                            Current Class: <span className="font-bold text-cyan-400">{getCurrentClass() || 'None'}</span>
+                        <div className="text-center mt-4 text-sm text-gray-400">
+                            Current Class: <span className="font-bold text-gray-200">{getCurrentClass() || 'None'}</span>
                         </div>
                     </Card>
                 </div>
                 <div className="lg:col-span-2">
                     <Card title="Recent Activity">
                         {recognitionHistory.length === 0 ? (
-                             <p className="text-slate-400 text-center py-8">System is ready. Start detection to see live results.</p>
+                             <p className="text-gray-400 text-center py-8">System is ready. Start detection to see live results.</p>
                         ) : (
                             <div className="space-y-3">
                                 {recognitionHistory.map((result, index) => (
